@@ -27,7 +27,6 @@ public class MFunction {
   private MDatabase database;
   private String className;
   private String ownerName;
-  private String ownerType;
   private int createTime;
   private int functionType;
   private List<MResourceUri> resourceUris;
@@ -39,7 +38,6 @@ public class MFunction {
       MDatabase database,
       String className,
       String ownerName,
-      String ownerType,
       int createTime,
       int functionType,
       List<MResourceUri> resourceUris) {
@@ -48,7 +46,6 @@ public class MFunction {
     this.setFunctionType(functionType);
     this.setClassName(className);
     this.setOwnerName(ownerName);
-    this.setOwnerType(ownerType);
     this.setCreateTime(createTime);
     this.setResourceUris(resourceUris);
   }
@@ -85,13 +82,13 @@ public class MFunction {
     this.ownerName = owner;
   }
 
-  public String getOwnerType() {
-    return ownerType;
-  }
-
-  public void setOwnerType(String ownerType) {
-    this.ownerType = ownerType;
-  }
+//  public String getOwnerType() {
+//    return ownerType;
+//  }
+//
+//  public void setOwnerType(String ownerType) {
+//    this.ownerType = ownerType;
+//  }
 
   public int getCreateTime() {
     return createTime;

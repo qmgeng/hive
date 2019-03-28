@@ -1296,13 +1296,13 @@ public class ObjectStore implements RawStore, Configurable {
         convertToFieldSchemas(mtbl.getPartitionKeys()), convertMap(mtbl.getParameters()),
         mtbl.getViewOriginalText(), mtbl.getViewExpandedText(), tableType);
 
-    if (Strings.isNullOrEmpty(mtbl.getOwnerType())) {
-      // Before the ownerType exists in an old Hive schema, USER was the default type for owner.
-      // Let's set the default to USER to keep backward compatibility.
-      t.setOwnerType(PrincipalType.USER);
-    } else {
-      t.setOwnerType(PrincipalType.valueOf(mtbl.getOwnerType()));
-    }
+//    if (Strings.isNullOrEmpty(mtbl.getOwnerType())) {
+//      // Before the ownerType exists in an old Hive schema, USER was the default type for owner.
+//      // Let's set the default to USER to keep backward compatibility.
+//      t.setOwnerType(PrincipalType.USER);
+//    } else {
+//      t.setOwnerType(PrincipalType.valueOf(mtbl.getOwnerType()));
+//    }
 
     return t;
   }
@@ -3220,7 +3220,7 @@ public class ObjectStore implements RawStore, Configurable {
       oldt.setTableName(HiveStringUtils.normalizeIdentifier(newt.getTableName()));
       oldt.setParameters(newt.getParameters());
       oldt.setOwner(newt.getOwner());
-      oldt.setOwnerType(newt.getOwnerType());
+//      oldt.setOwnerType(newt.getOwnerType());
       // Fully copy over the contents of the new SD into the old SD,
       // so we don't create an extra SD in the metastore db that has no references.
       MColumnDescriptor oldCD = null;
@@ -7566,7 +7566,7 @@ public class ObjectStore implements RawStore, Configurable {
         mfunc.getDatabase().getName(),
         mfunc.getClassName(),
         mfunc.getOwnerName(),
-        PrincipalType.valueOf(mfunc.getOwnerType()),
+//        PrincipalType.valueOf(mfunc.getOwnerType()),
         mfunc.getCreateTime(),
         FunctionType.findByValue(mfunc.getFunctionType()),
         convertToResourceUriList(mfunc.getResourceUris()));
@@ -7601,7 +7601,6 @@ public class ObjectStore implements RawStore, Configurable {
         mdb,
         func.getClassName(),
         func.getOwnerName(),
-        func.getOwnerType().name(),
         func.getCreateTime(),
         func.getFunctionType().getValue(),
         convertToMResourceUriList(func.getResourceUris()));
@@ -7668,7 +7667,6 @@ public class ObjectStore implements RawStore, Configurable {
       oldf.setFunctionName(HiveStringUtils.normalizeIdentifier(newf.getFunctionName()));
       oldf.setDatabase(newf.getDatabase());
       oldf.setOwnerName(newf.getOwnerName());
-      oldf.setOwnerType(newf.getOwnerType());
       oldf.setClassName(newf.getClassName());
       oldf.setFunctionType(newf.getFunctionType());
 

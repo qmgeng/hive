@@ -27,7 +27,7 @@ public class MTable {
   private MDatabase database;
   private MStorageDescriptor sd;
   private String owner;
-  private String ownerType;
+//  private String ownerType;
   private int createTime;
   private int lastAccessTime;
   private int retention;
@@ -62,7 +62,7 @@ public class MTable {
     this.database = database;
     this.sd = sd;
     this.owner = owner;
-    this.ownerType = ownerType;
+//    this.ownerType = ownerType;
     this.createTime = createTime;
     this.setLastAccessTime(lastAccessTime);
     this.retention = retention;
@@ -73,19 +73,19 @@ public class MTable {
     this.tableType = tableType;
   }
 
-  /**
-   * @return the owner type
-   */
-  public String getOwnerType() {
-    return ownerType;
-  }
-
-  /**
-   * @param ownerType the owner type to set
-   */
-  public void setOwnerType(String ownerType) {
-    this.ownerType = ownerType;
-  }
+//  /**
+//   * @return the owner type
+//   */
+//  public String getOwnerType() {
+//    return ownerType;
+//  }
+//
+//  /**
+//   * @param ownerType the owner type to set
+//   */
+//  public void setOwnerType(String ownerType) {
+//    this.ownerType = ownerType;
+//  }
 
   /**
    * @return the tableName
