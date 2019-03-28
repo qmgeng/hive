@@ -971,9 +971,6 @@
       <field name="ownerName">	
         <column name="OWNER_NAME" length="128" jdbc-type="VARCHAR"/>
       </field>
-       <field name="ownerType">
-        <column name="OWNER_TYPE" length="10" jdbc-type="VARCHAR"/>
-      </field>
       <field name="createTime">
         <column name="CREATE_TIME" jdbc-type="integer"/>
       </field>
