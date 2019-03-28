@@ -33,7 +33,7 @@ public class MDatabase {
   private String description;
   private Map<String, String> parameters;
   private String ownerName;
-  private String ownerType;
+//  private String ownerType;
 
   /**
    * Default construction to keep jpox/jdo happy
@@ -118,11 +118,11 @@ public class MDatabase {
     this.ownerName = ownerName;
   }
 
-  public String getOwnerType() {
-    return ownerType;
-  }
-
-  public void setOwnerType(String ownerType) {
-    this.ownerType = ownerType;
-  }
+//  public String getOwnerType() {
+//    return ownerType;
+//  }
+//
+//  public void setOwnerType(String ownerType) {
+//    this.ownerType = ownerType;
+//  }
 }

@@ -572,7 +572,7 @@ public class ObjectStore implements RawStore, Configurable {
     mdb.setParameters(db.getParameters());
     mdb.setOwnerName(db.getOwnerName());
     PrincipalType ownerType = db.getOwnerType();
-    mdb.setOwnerType((null == ownerType ? PrincipalType.USER.name() : ownerType.name()));
+//    mdb.setOwnerType((null == ownerType ? PrincipalType.USER.name() : ownerType.name()));
     try {
       openTransaction();
       pm.makePersistent(mdb);
@@ -664,8 +664,8 @@ public class ObjectStore implements RawStore, Configurable {
     db.setLocationUri(mdb.getLocationUri());
     db.setParameters(convertMap(mdb.getParameters()));
     db.setOwnerName(mdb.getOwnerName());
-    String type = mdb.getOwnerType();
-    db.setOwnerType((null == type || type.trim().isEmpty()) ? null : PrincipalType.valueOf(type));
+//    String type = mdb.getOwnerType();
+    db.setOwnerType(PrincipalType.USER);
     return db;
   }
 
@@ -687,9 +687,9 @@ public class ObjectStore implements RawStore, Configurable {
       mdb = getMDatabase(dbName);
       mdb.setParameters(db.getParameters());
       mdb.setOwnerName(db.getOwnerName());
-      if (db.getOwnerType() != null) {
-        mdb.setOwnerType(db.getOwnerType().name());
-      }
+//      if (db.getOwnerType() != null) {
+//        mdb.setOwnerType(db.getOwnerType().name());
+//      }
       if (org.apache.commons.lang.StringUtils.isNotBlank(db.getDescription())) {
         mdb.setDescription(db.getDescription());
       }
@@ -7410,10 +7410,7 @@ public class ObjectStore implements RawStore, Configurable {
       return null;
     }
     // return schema version V2 if available else fall back to schemaVersion
-    String schemaVersionV2 = mSchemaVer.getSchemaVersionV2();
-    if(schemaVersionV2 != null) {
-      return schemaVersionV2;
-    }
+
     return mSchemaVer.getSchemaVersion();
   }
 
