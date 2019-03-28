@@ -1775,7 +1775,7 @@ public class ObjectStore implements RawStore, Configurable {
     }
 
     t.setId(mtbl.getId());
-    t.setRewriteEnabled(mtbl.isRewriteEnabled());
+//    t.setRewriteEnabled(mtbl.isRewriteEnabled());
     t.setCatName(mtbl.getDatabase().getCatalogName());
     t.setWriteId(mtbl.getWriteId());
     return t;
@@ -4204,7 +4204,7 @@ public class ObjectStore implements RawStore, Configurable {
       oldt.setLastAccessTime(newt.getLastAccessTime());
       oldt.setViewOriginalText(newt.getViewOriginalText());
       oldt.setViewExpandedText(newt.getViewExpandedText());
-      oldt.setRewriteEnabled(newt.isRewriteEnabled());
+//      oldt.setRewriteEnabled(newt.isRewriteEnabled());
 
       // If transactional, update the stats state for the current Stats updater query.
       // Set stats invalid for ACID conversion; it doesn't pass in the write ID.

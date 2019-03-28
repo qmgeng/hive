@@ -37,7 +37,7 @@ public class MTable {
   private Map<String, String> parameters;
   private String viewOriginalText;
   private String viewExpandedText;
-  private boolean rewriteEnabled;
+//  private boolean rewriteEnabled;
   private String tableType;
   private long writeId;
 
@@ -74,7 +74,7 @@ public class MTable {
     this.parameters = parameters;
     this.viewOriginalText = viewOriginalText;
     this.viewExpandedText = viewExpandedText;
-    this.rewriteEnabled = rewriteEnabled;
+//    this.rewriteEnabled = rewriteEnabled;
     this.tableType = tableType;
   }
 
@@ -162,19 +162,19 @@ public class MTable {
     this.viewExpandedText = viewExpandedText;
   }
 
-  /**
-   * @return whether the view can be used for rewriting queries
-   */
-  public boolean isRewriteEnabled() {
-    return rewriteEnabled;
-  }
-
-  /**
-   * @param rewriteEnabled whether the view can be used for rewriting queries
-   */
-  public void setRewriteEnabled(boolean rewriteEnabled) {
-    this.rewriteEnabled = rewriteEnabled;
-  }
+//  /**
+//   * @return whether the view can be used for rewriting queries
+//   */
+//  public boolean isRewriteEnabled() {
+//    return rewriteEnabled;
+//  }
+//
+//  /**
+//   * @param rewriteEnabled whether the view can be used for rewriting queries
+//   */
+//  public void setRewriteEnabled(boolean rewriteEnabled) {
+//    this.rewriteEnabled = rewriteEnabled;
+//  }
 
   /**
    * @return the owner
