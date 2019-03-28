@@ -7566,7 +7566,7 @@ public class ObjectStore implements RawStore, Configurable {
         mfunc.getDatabase().getName(),
         mfunc.getClassName(),
         mfunc.getOwnerName(),
-//        PrincipalType.valueOf(mfunc.getOwnerType()),
+        PrincipalType.USER,
         mfunc.getCreateTime(),
         FunctionType.findByValue(mfunc.getFunctionType()),
         convertToResourceUriList(mfunc.getResourceUris()));
