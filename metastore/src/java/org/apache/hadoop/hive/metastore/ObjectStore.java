@@ -1437,7 +1437,7 @@ public class ObjectStore implements RawStore, Configurable {
             .getRetention(), convertToStorageDescriptor(mtbl.getSd()),
             convertToFieldSchemas(mtbl.getPartitionKeys()), convertMap(mtbl.getParameters()),
             mtbl.getViewOriginalText(), mtbl.getViewExpandedText(), tableType);
-    table.setRewriteEnabled(mtbl.isRewriteEnabled());
+//    table.setRewriteEnabled(mtbl.isRewriteEnabled());
     return table;
   }
 
@@ -3219,7 +3219,7 @@ public class ObjectStore implements RawStore, Configurable {
       oldt.setLastAccessTime(newt.getLastAccessTime());
       oldt.setViewOriginalText(newt.getViewOriginalText());
       oldt.setViewExpandedText(newt.getViewExpandedText());
-      oldt.setRewriteEnabled(newt.isRewriteEnabled());
+//      oldt.setRewriteEnabled(newt.isRewriteEnabled());
 
       // commit the changes
       success = commitTransaction();
